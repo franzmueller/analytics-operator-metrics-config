@@ -20,7 +20,7 @@
     <outputWriter class="org.jmxtrans.agent.ConsoleOutputWriter"/>
     <outputWriter class="org.jmxtrans.agent.influxdb.InfluxDbOutputWriter">
         <url>${METRICS_INFLUX_URL}</url>
-        <database>${METRICS_INFLUX_DB}</database>
+        <database>${OPERATOR_ID}</database>
     </outputWriter>
     <collectIntervalInSeconds>${METRICS_INTERVAL}</collectIntervalInSeconds>
 </jmxtrans-agent>

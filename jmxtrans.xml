@@ -19,10 +19,10 @@
     </queries>
     <outputWriter class="org.jmxtrans.agent.ConsoleOutputWriter"/>
     <outputWriter class="org.jmxtrans.agent.influxdb.InfluxDbOutputWriter">
-        <url>${METRICS_INFLUX_URL}</url>
+        <url>${METRICS_URL}</url>
         <database>${OPERATOR_ID}</database>
-        <user>${METRICS_INFLUX_USER}</user>
-        <password>${METRICS_INFLUX_PW}</password>
+        <user>${METRICS_USER}</user>
+        <password>${METRICS_PASSWORD}</password>
     </outputWriter>
     <collectIntervalInSeconds>${METRICS_INTERVAL}</collectIntervalInSeconds>
 </jmxtrans-agent>

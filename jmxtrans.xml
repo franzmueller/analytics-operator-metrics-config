@@ -21,6 +21,8 @@
     <outputWriter class="org.jmxtrans.agent.influxdb.InfluxDbOutputWriter">
         <url>${METRICS_INFLUX_URL}</url>
         <database>${OPERATOR_ID}</database>
+        <user>${METRICS_INFLUX_USER}</user>
+        <password>${METRICS_INFLUX_PW}</password>
     </outputWriter>
     <collectIntervalInSeconds>${METRICS_INTERVAL}</collectIntervalInSeconds>
 </jmxtrans-agent>

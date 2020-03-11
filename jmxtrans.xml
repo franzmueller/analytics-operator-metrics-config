@@ -1,0 +1,26 @@
+<jmxtrans-agent>
+    <queries>
+        <!-- JVM -->
+        <query objectName="java.lang:type=Memory" attribute="HeapMemoryUsage" key="used"
+               resultAlias="jvm.heapMemoryUsage.used"/>
+        <query objectName="java.lang:type=Memory" attribute="HeapMemoryUsage" key="committed"
+               resultAlias="jvm.heapMemoryUsage.committed"/>
+        <query objectName="java.lang:type=Memory" attribute="NonHeapMemoryUsage" key="used"
+               resultAlias="jvm.nonHeapMemoryUsage.used"/>
+        <query objectName="java.lang:type=Memory" attribute="NonHeapMemoryUsage" key="committed"
+               resultAlias="jvm.nonHeapMemoryUsage.committed"/>
+
+        <!-- Kafka -->
+        <query objectName="kafka.streams:type=stream-metrics,client-id=*" attribute="process-rate"
+               resultAlias="kafka.process-rate"/>
+        <query objectName="kafka.streams:type=stream-metrics,client-id=*" attribute="process-latency-avg"
+               resultAlias="kafka.process-latency-avg"/>
+
+    </queries>
+    <outputWriter class="org.jmxtrans.agent.ConsoleOutputWriter"/>
+    <outputWriter class="org.jmxtrans.agent.influxdb.InfluxDbOutputWriter">
+        <url>${METRICS_INFLUX_URL}</url>
+        <database>${METRICS_INFLUX_DB}</database>
+    </outputWriter>
+    <collectIntervalInSeconds>${METRICS_INTERVAL}</collectIntervalInSeconds>
+</jmxtrans-agent>

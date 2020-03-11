@@ -13,11 +13,9 @@
         <!-- Kafka -->
         <query objectName="kafka.streams:type=stream-metrics,client-id=*" attribute="process-rate"
                resultAlias="kafka.process-rate"/>
-        <query objectName="kafka.streams:type=stream-metrics,client-id=*" attribute="process-latency-avg"
-               resultAlias="kafka.process-latency-avg"/>
+
 
     </queries>
-    <outputWriter class="org.jmxtrans.agent.ConsoleOutputWriter"/>
     <outputWriter class="org.jmxtrans.agent.influxdb.InfluxDbOutputWriter">
         <url>${METRICS_URL}</url>
         <database>${OPERATOR_ID}</database>

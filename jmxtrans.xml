@@ -18,7 +18,7 @@
     </queries>
     <outputWriter class="org.jmxtrans.agent.influxdb.InfluxDbOutputWriter">
         <url>${METRICS_URL}</url>
-        <database>${OPERATOR_ID}</database>
+        <database>${PIPELINE_ID}-${OPERATOR_ID}</database>
         <user>${METRICS_USER}</user>
         <password>${METRICS_PASSWORD}</password>
     </outputWriter>
